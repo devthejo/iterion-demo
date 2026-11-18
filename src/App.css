@@ -1,0 +1,174 @@
+:root {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color: #1d1d1f;
+  background: linear-gradient(160deg, #fdf6ec 0%, #eef4ff 100%);
+  min-height: 100vh;
+}
+
+body {
+  margin: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+  box-sizing: border-box;
+}
+
+.card {
+  width: min(28rem, 100%);
+  background: #fff;
+  border-radius: 1.25rem;
+  padding: 2rem;
+  box-shadow: 0 20px 50px rgb(30 40 80 / 12%);
+  display: grid;
+  gap: 1.5rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.6rem;
+}
+
+.subtitle {
+  margin: 0.25rem 0 0;
+  color: #6b6b75;
+}
+
+.field {
+  display: grid;
+  gap: 0.5rem;
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.field > span,
+.field legend {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #4a4a55;
+  padding: 0;
+}
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.amount input {
+  flex: 1;
+  font: inherit;
+  border: 2px solid #e2e4ea;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.amount input[aria-invalid="true"] {
+  border-color: #e5484d;
+}
+
+.tips {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chip {
+  flex: 1;
+  border: 2px solid #e2e4ea;
+  background: #fff;
+  border-radius: 999px;
+  padding: 0.4rem 0;
+  font: inherit;
+  cursor: pointer;
+}
+
+.chip.active {
+  border-color: #3e63dd;
+  background: #3e63dd;
+  color: #fff;
+}
+
+.people {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 0.4rem;
+}
+
+.people li {
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: 0.75rem;
+  background: #f6f7fb;
+}
+
+.share {
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+}
+
+.remove {
+  border: 0;
+  background: transparent;
+  font-size: 1.2rem;
+  color: #8b8b95;
+  cursor: pointer;
+}
+
+.add {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.add input {
+  flex: 1;
+  font: inherit;
+  border: 2px solid #e2e4ea;
+  border-radius: 0.75rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.add button {
+  font: inherit;
+  border: 0;
+  border-radius: 0.75rem;
+  padding: 0 1rem;
+  background: #1d1d1f;
+  color: #fff;
+  cursor: pointer;
+}
+
+.check {
+  display: grid;
+  gap: 0.35rem;
+  border-radius: 1rem;
+  padding: 1rem 1.25rem;
+}
+
+.check div {
+  display: flex;
+  justify-content: space-between;
+  font-variant-numeric: tabular-nums;
+}
+
+.check p {
+  margin: 0.25rem 0 0;
+  font-weight: 700;
+}
+
+.check.ok {
+  background: #e9f9ee;
+  color: #18794e;
+}
+
+.check.ko {
+  background: #feecee;
+  color: #cd2b31;
+}

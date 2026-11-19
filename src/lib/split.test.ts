@@ -17,6 +17,12 @@ describe("splitBill", () => {
     expect(shares.map((s) => s.name)).toEqual(["Ana", "Bob", "Chloé"]);
   });
 
+  it("makes the shares add up to the bill when it does not divide", () => {
+    const shares = splitBill(10000, ["Ana", "Bob", "Chloé"]);
+    expect(shares.map((s) => s.cents)).toEqual([3334, 3333, 3333]);
+    expect(shares.reduce((sum, s) => sum + s.cents, 0)).toBe(10000);
+  });
+
   it("returns no share when nobody is at the table", () => {
     expect(splitBill(5000, [])).toEqual([]);
   });

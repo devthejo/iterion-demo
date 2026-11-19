@@ -15,6 +15,9 @@ export function totalWithTip(totalCents: number, tipPercent = 0): number {
  */
 export function splitBill(totalCents: number, people: string[], tipPercent = 0): Share[] {
   if (people.length === 0) return [];
-  const each = Math.round(totalWithTip(totalCents, tipPercent) / people.length);
-  return people.map((name) => ({ name, cents: each }));
+  const total = totalWithTip(totalCents, tipPercent);
+  const base = Math.floor(total / people.length);
+  const leftover = total - base * people.length;
+  // The leftover cents go to the first people, one each: the shares add up to the bill.
+  return people.map((name, index) => ({ name, cents: base + (index < leftover ? 1 : 0) }));
 }
